@@ -1,73 +1,63 @@
-* {
-  outline: 1px solid blue;
-}
-
 ul,
 li {
   margin: 0;
   padding: 0;
-}
-
-img {
-  display: block;
-  /* max-width: 100%;
-  max-height: 1000px; */
-  object-fit: cover;
-  max-width: 100%;
-  height: 100%;
-}
-
-.img-wrap {
-  overflow: hidden;
-  position: relative;
-  /* width: 600px; */
-  height: calc(100% - 1rem);
-  width: calc(100% - 1rem);
-  padding: 0.5rem;
-  display: flex;
+  list-style: none;
 }
 
 ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  width: fit-content;
-  justify-content: center;
-
-  /* transition: all 200ms ease-in-out; */
-
+  display: flex;
   height: 100%;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 li {
-  list-style: none;
-  height: 100%;
+  padding: 0.5rem;
 }
 
 body {
   display: flex;
   flex-direction: column;
 
-  height: 100vh;
-  width: 100vw;
   margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  min-width: 400px;
 }
 
-body {
-  /* position: relative; */
-  width: 100vw;
-  height: 100vh;
+img {
+  display: block;
+
+  object-fit: cover;
+
+  height: 100%;
+
+  max-width: 100%;
+}
+
+.img-wrap {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+
+  width: fit-content;
 }
 
 .content {
-  height: 100%;
-  width: fit-content;
+  height: 80%;
   margin: auto auto;
   position: relative;
+  z-index: 0;
+
+  width: fit-content;
+  max-width: 100%;
 }
 
-.content li {
-  /* padding: 1rem; */
+li {
+  position: relative;
 }
 
 .rhythm {
@@ -75,10 +65,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgb(211, 38, 38);
-  /* border-radius: 50% 50%; */
   top: 0;
   left: 0;
-  /* transform: translate(-50%, 20px); */
   border: 1rem;
   z-index: -1;
 }
@@ -88,7 +76,7 @@ body {
   justify-content: space-around;
   align-items: center;
   margin: 0 auto;
-  width: 50%;
+  gap: 1rem;
   height: 30%;
 }
 

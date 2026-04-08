@@ -1,19 +1,24 @@
 const img = document.getElementsByTagName("img");
-const rhythmBlock = document.querySelector(".rhythm");
+const rhythmBlocks = document.querySelectorAll(".rhythm");
 const srcList = [];
 
 let rhythmId = null;
 let rhythmSpeed = 500;
 let prevSpeed = 500;
-let intervalTime = Math.ceil(Math.random() * 5000 + 1000);
+let intervalTime = Math.ceil(Math.random() * 1000 + 500);
 
+let index = 13;
 function addSrc() {
-  let src = "./pics/" + srcList[Math.floor(Math.random() * srcList.length - 1)];
+  index = index > srcList.length - 2 ? 0 : +index + 1;
+
+  let src = srcList[index];
+
+  // let src = "./pics/" + srcList[Math.floor(Math.random() * srcList.length - 1)];
+  // let src = srcList[Math.floor(Math.random() * srcList.length - 1)];
   img[0].attributes.src.nodeValue = src;
   img[1].attributes.src.nodeValue = src;
   if (intervalTime) setTimeout(addSrc, intervalTime);
   if (rhythmSpeed) rhythmSpeed = rhythmSpeed <= 200 ? 200 : rhythmSpeed - 15;
-
   changeRhythm(rhythmSpeed);
 }
 
@@ -51,7 +56,8 @@ controls.addEventListener("click", (evt) => {
 });
 
 function changeRhythm(duration) {
-  rhythmBlock.style.animation = `blink ${duration}ms infinite`;
+  rhythmBlocks[0].style.animation = `blink ${duration}ms infinite`;
+  rhythmBlocks[1].style.animation = `blink ${duration}ms infinite`;
 }
 
 function stopButtonTextChange() {

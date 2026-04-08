@@ -1,0 +1,66 @@
+* {
+  outline: 1px solid blue;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- CONTENT DEFINES HEIGHT --- */
+
+.content {
+  height: 80vh;
+  margin: auto;
+  position: relative;
+
+  display: flex;
+  align-items: stretch; /* important */
+}
+
+/* --- UL FILLS CONTENT --- */
+
+ul {
+  display: flex;
+  height: 100%; /* 👈 required */
+  margin: 0;
+  padding: 0;
+}
+
+/* --- LI FILLS UL --- */
+
+li {
+  list-style: none;
+  height: 100%; /* 👈 required */
+  flex: 0 0 auto; /* 👈 no stretching horizontally */
+  display: flex; /* 👈 allows child to use height */
+}
+
+/* --- WRAP FILLS LI --- */
+
+.img-wrap {
+  height: 100%; /* 👈 required */
+  padding: 0.5rem;
+
+  display: flex;
+}
+
+/* --- IMAGE FILLS WRAP --- */
+
+img {
+  display: block;
+
+  height: 100%; /* 👈 final link */
+  width: auto; /* 👈 preserve ratio */
+
+  object-fit: contain; /* 👈 no cropping */
+
+  /* 🚫 DO NOT use max-width here */
+}
